@@ -1,30 +1,29 @@
 <?php
-namespace App\Respositories\User;
-
-
+ namespace App\Respositories\User;
+ //namespace Respositories;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 
+
 class UserRepository implements UserRepositoryInterface{
 
-   protected $user;
+  // protected $user;
 
-   public function _construct(User $user){
+  /*public function _construct(){
 
-      $this->user=$user;
-   }
+      //$this->user=$user;
+   }  */
 
    public function getAllList(){
 
-       return $this->user->all();
+       return User::all();
    }
 
    public function getListById($id){
        
-    return $this->user->findOrFail($id);
+    return User::findOrFail($id);
 }
 
 }
 
 
-?>
